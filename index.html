@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petals — Premium Crochet Flowers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f0eb;
+    --warm-white: #faf8f5;
+    --dark: #1a1a18;
+    --brown: #8b6f47;
+    --brown-light: #c4a882;
+    --brown-pale: #e8ddd0;
+    --green: #5a7a4a;
+    --text: #2c2c2a;
+    --text-muted: #7a7a76;
+    --border: #e0d8ce;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250,248,245,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo svg { width: 28px; height: 28px; }
+  .nav-logo span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem; font-weight: 500; color: var(--text);
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--text-muted);
+    font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 500; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 22px; height: 1.5px; background: var(--text); display: block; transition: 0.3s; }
+
+  /* ─── HERO ─── */
+  #home {
+    margin-top: 0;
+    padding-top: 68px;
+    min-height: 100vh;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    background: #8a7060;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1700170447159-9d2d0da133a5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y3JvY2hldCUyMGZsb3dlcnxlbnwwfHwwfHx8MA%3D%3D');
+    background-size: cover; background-position: center;
+    transform: scale(1.04);
+    animation: heroZoom 18s ease-in-out infinite alternate;
+  }
+  @keyframes heroZoom {
+    from { transform: scale(1.04); }
+    to   { transform: scale(1.12); }
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(30,22,16,0.38) 0%,
+      rgba(20,14,10,0.55) 60%,
+      rgba(15,10,6,0.72) 100%
+    );
+  }
+  .hero-content {
+    position: relative; text-align: center; padding: 0 5%;
+    animation: fadeUp 1s ease both;
+  }
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.25em;
+    text-transform: uppercase; color: rgba(255,255,255,0.85);
+    margin-bottom: 18px;
+  }
+  .hero-eyebrow span { margin: 0 10px; opacity: 0.6; }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4.5rem, 12vw, 9rem);
+    font-weight: 400; color: #fff;
+    line-height: 0.95; letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.15);
+  }
+  .hero-sub {
+    font-size: 1rem; color: rgba(255,255,255,0.85);
+    max-width: 500px; margin: 0 auto 40px;
+    line-height: 1.65; font-weight: 300;
+  }
+  .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.5);
+    color: #fff; padding: 14px 32px; border-radius: 50px;
+    text-decoration: none; font-size: 0.88rem; font-weight: 500;
+    letter-spacing: 0.04em; transition: all 0.25s; cursor: pointer;
+    backdrop-filter: blur(4px);
+  }
+  .btn-primary:hover { background: rgba(255,255,255,0.28); }
+  .btn-wa {
+    background: #25d366; border: none; color: #fff;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none; font-size: 0.88rem; font-weight: 500;
+    letter-spacing: 0.04em; transition: all 0.25s; cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .btn-wa:hover { background: #1fb858; transform: translateY(-1px); }
+  .btn-wa svg { width: 18px; height: 18px; }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 90px 5%; }
+  .section-eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--brown); font-weight: 500; margin-bottom: 12px; text-align: center;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400; text-align: center; margin-bottom: 14px;
+    color: var(--text);
+  }
+  .section-desc {
+    text-align: center; color: var(--text-muted);
+    max-width: 520px; margin: 0 auto 50px;
+    font-size: 0.95rem; line-height: 1.7; font-weight: 300;
+  }
+
+  /* ─── CATALOGUE ─── */
+  #catalogue { background: var(--cream); }
+  .filter-bar {
+    display: flex; gap: 10px; justify-content: center;
+    flex-wrap: wrap; margin-bottom: 55px;
+  }
+  .filter-btn {
+    padding: 9px 22px; border-radius: 50px;
+    border: 1.5px solid var(--border); background: transparent;
+    font-family: 'Jost', sans-serif; font-size: 0.83rem;
+    color: var(--text-muted); cursor: pointer; transition: all 0.2s;
+    letter-spacing: 0.03em; font-weight: 500;
+  }
+  .filter-btn:hover { border-color: var(--brown-light); color: var(--text); }
+  .filter-btn.active {
+    background: var(--dark); border-color: var(--dark);
+    color: #fff;
+  }
+
+  /* category divider */
+  .cat-divider {
+    text-align: center; margin: 50px 0 30px;
+    position: relative;
+  }
+  .cat-divider::before {
+    content: ''; position: absolute; top: 50%; left: 0; right: 0;
+    height: 1px; background: var(--border);
+  }
+  .cat-divider span {
+    position: relative; background: var(--cream);
+    padding: 0 20px; font-size: 0.68rem;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--text-muted); font-weight: 500;
+  }
+
+  /* grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+  }
+  .product-card {
+    background: #fff; border-radius: 16px;
+    overflow: hidden; cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border: 1px solid var(--border);
+  }
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+  .card-img-wrap {
+    aspect-ratio: 1; overflow: hidden; position: relative;
+    background: #f5f3f0;
+  }
+  .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+  .product-card:hover .card-img-wrap img { transform: scale(1.04); }
+  .card-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--dark); color: #fff;
+    font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 20px; font-weight: 500;
+  }
+  .card-body { padding: 18px 18px 16px; }
+  .card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 500; margin-bottom: 3px;
+  }
+  .card-cat {
+    font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--text-muted); font-weight: 500; margin-bottom: 12px;
+  }
+  .card-footer { display: flex; align-items: center; justify-content: space-between; }
+  .card-price { color: var(--brown); font-weight: 500; font-size: 0.95rem; }
+  .card-price small { font-size: 0.75rem; color: var(--text-muted); font-weight: 400; }
+  .card-add {
+    width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--border);
+    background: #fff; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.2s; font-size: 1.1rem; color: var(--text-muted);
+  }
+  .card-add:hover { background: var(--dark); border-color: var(--dark); color: #fff; }
+
+  /* ─── COMING SOON section ─── */
+  #coming-soon { background: var(--warm-white); }
+  .cs-grid {
+    display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+  }
+  .cs-card {
+    width: 280px; border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--border); background: #fff;
+  }
+  .cs-img-wrap { aspect-ratio: 1; position: relative; overflow: hidden; background: #ede8e2; }
+  .cs-img-wrap img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(60%); }
+  .cs-pill {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,0.1);
+    color: var(--text); font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; padding: 6px 16px; border-radius: 20px; font-weight: 600;
+    white-space: nowrap;
+  }
+  .cs-body { padding: 16px 18px; text-align: center; }
+  .cs-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; margin-bottom: 4px; }
+  .cs-body p { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
+
+  /* ─── SAMPLE BOX ─── */
+  #sample {
+    background: var(--dark); color: #fff;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center; padding: 90px 8%;
+  }
+  .sample-img {
+    border-radius: 20px; overflow: hidden; aspect-ratio: 4/3;
+    background: #2a2a28;
+  }
+  .sample-img img { width: 100%; height: 100%; object-fit: cover; }
+  .sample-eyebrow {
+    font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--brown-light); font-weight: 500; margin-bottom: 14px;
+  }
+  .sample-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 400;
+    line-height: 1.1; margin-bottom: 18px;
+  }
+  .sample-desc { color: rgba(255,255,255,0.65); font-size: 0.95rem; line-height: 1.7; font-weight: 300; margin-bottom: 28px; }
+  .sample-checks { list-style: none; margin-bottom: 32px; display: flex; flex-direction: column; gap: 10px; }
+  .sample-checks li { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+  .check-icon { color: var(--brown-light); font-size: 0.8rem; }
+  .sample-price-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brown-light); margin-bottom: 6px; }
+  .sample-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 400; color: #fff; margin-bottom: 28px;
+  }
+  .btn-sample {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: var(--brown-light); color: var(--dark);
+    padding: 14px 32px; border-radius: 50px; text-decoration: none;
+    font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em;
+    transition: all 0.25s; cursor: pointer; border: none;
+  }
+  .btn-sample:hover { background: #d4b892; transform: translateY(-1px); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--cream); border-top: 1px solid var(--border);
+    padding: 60px 8% 30px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px; margin-bottom: 50px;
+  }
+  .footer-brand .nav-logo { margin-bottom: 16px; display: inline-flex; }
+  .footer-brand p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; font-weight: 300; max-width: 280px; margin-bottom: 18px; }
+  .footer-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .footer-tag {
+    border: 1px solid var(--border); color: var(--text-muted);
+    font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 20px;
+  }
+  .footer-col h4 {
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 18px; color: var(--text);
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul li a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--text); }
+  .footer-col .contact-item { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; }
+  .footer-col .contact-item svg { width: 16px; height: 16px; flex-shrink: 0; }
+  .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .footer-bottom p { color: var(--text-muted); font-size: 0.8rem; }
+
+  /* ─── WA FLOAT ─── */
+  .wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    width: 54px; height: 54px; border-radius: 50%;
+    background: #25d366; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    cursor: pointer; text-decoration: none; transition: transform 0.2s;
+  }
+  .wa-float:hover { transform: scale(1.08); }
+  .wa-float svg { width: 26px; height: 26px; }
+
+  /* ─── MODAL ─── */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 300;
+    background: rgba(0,0,0,0.55); backdrop-filter: blur(4px);
+    display: none; align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: #fff; border-radius: 24px; max-width: 800px; width: 100%;
+    max-height: 90vh; overflow-y: auto; display: grid;
+    grid-template-columns: 1fr 1fr;
+    animation: modalIn 0.3s ease;
+  }
+  @keyframes modalIn { from { opacity: 0; transform: scale(0.96) translateY(12px); } to { opacity: 1; transform: none; } }
+  .modal-img { aspect-ratio: 1; background: #f5f3f0; border-radius: 24px 0 0 24px; overflow: hidden; }
+  .modal-img img { width: 100%; height: 100%; object-fit: cover; }
+  .modal-body { padding: 40px 36px; display: flex; flex-direction: column; }
+  .modal-close {
+    align-self: flex-end; width: 32px; height: 32px; border-radius: 50%;
+    border: 1.5px solid var(--border); background: #fff;
+    cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); transition: all 0.2s; margin-bottom: 20px;
+  }
+  .modal-close:hover { background: var(--dark); color: #fff; border-color: var(--dark); }
+  .modal-badge {
+    display: inline-block; background: var(--dark); color: #fff;
+    font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; font-weight: 500;
+  }
+  .modal-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 500; margin-bottom: 6px; line-height: 1.1;
+  }
+  .modal-cat { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 20px; }
+  .modal-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; font-weight: 300; margin-bottom: 24px; flex: 1; }
+  .modal-price-row { margin-bottom: 10px; }
+  .modal-price { color: var(--brown); font-size: 1.5rem; font-weight: 600; }
+  .modal-price-note { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; }
+  .modal-moq { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 28px; }
+  .modal-moq strong { color: var(--text); }
+  .btn-modal-wa {
+    display: flex; align-items: center; justify-content: center; gap: 9px;
+    background: #25d366; color: #fff; border: none;
+    padding: 14px; border-radius: 12px; cursor: pointer;
+    font-family: 'Jost', sans-serif; font-size: 0.88rem; font-weight: 600;
+    letter-spacing: 0.04em; text-decoration: none; transition: background 0.2s;
+  }
+  .btn-modal-wa:hover { background: #1fb858; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: none; }
+  }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  /* product card — hidden until scrolled into view */
+  .product-card {
+    opacity: 0;
+    transform: translateY(48px) scale(0.96);
+    transition:
+      opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+      transform 0.6s cubic-bezier(0.22,1,0.36,1),
+      box-shadow 0.28s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-card.card-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  .product-card:hover {
+    transform: translateY(-6px) scale(1.015) !important;
+    box-shadow: 0 22px 52px rgba(0,0,0,0.11) !important;
+  }
+
+  /* shimmer sweep on hover */
+  .product-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 30%,
+      rgba(255,255,255,0.22) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.55s ease;
+    pointer-events: none;
+  }
+  .product-card:hover::after {
+    transform: translateX(100%);
+  }
+
+  /* image zoom is already on .card-img-wrap img — keep it */
+
+  /* category divider reveal */
+  .cat-divider {
+    opacity: 0;
+    transform: scaleX(0.5) translateY(8px);
+    transform-origin: center;
+    transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22,1,0.36,1);
+  }
+  .cat-divider.div-visible {
+    opacity: 1;
+    transform: scaleX(1) translateY(0);
+  }
+
+  /* card image lift */
+  .product-card.card-visible .card-img-wrap img {
+    animation: none;
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .mobile-menu {
+      display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 99;
+      background: var(--warm-white); border-bottom: 1px solid var(--border);
+      padding: 20px 5%; flex-direction: column; gap: 16px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { text-decoration: none; color: var(--text-muted); font-size: 0.95rem; letter-spacing: 0.05em; }
+    #sample { grid-template-columns: 1fr; padding: 60px 5%; }
+    .sample-img { display: none; }
+    .modal { grid-template-columns: 1fr; }
+    .modal-img { border-radius: 24px 24px 0 0; aspect-ratio: 4/3; }
+    .modal-img img { }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  }
+  @media (max-width: 500px) {
+    .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+    .modal-body { padding: 24px 20px; }
+    .modal-name { font-size: 1.5rem; }
+  }
+
+  /* ─── ORDER BUILDER ─── */
+  #order-builder { background: var(--warm-white); padding: 90px 5%; }
+  .ob-layout {
+    display: grid; grid-template-columns: 1fr 380px; gap: 40px;
+    align-items: start; max-width: 1200px; margin: 0 auto;
+  }
+  /* search */
+  .ob-search-wrap {
+    position: relative; margin-bottom: 24px;
+  }
+  .ob-search {
+    width: 100%; padding: 13px 44px 13px 18px;
+    border: 1.5px solid var(--border); border-radius: 50px;
+    font-family: 'Jost', sans-serif; font-size: 0.9rem; color: var(--text);
+    background: #fff; outline: none; transition: border-color 0.2s;
+  }
+  .ob-search:focus { border-color: var(--brown-light); }
+  .ob-search-icon {
+    position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    color: var(--text-muted); pointer-events: none;
+  }
+  /* category tabs */
+  .ob-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+  .ob-tab {
+    padding: 7px 18px; border-radius: 50px;
+    border: 1.5px solid var(--border); background: #fff;
+    font-family: 'Jost', sans-serif; font-size: 0.8rem; color: var(--text-muted);
+    cursor: pointer; transition: all 0.2s; font-weight: 500; letter-spacing: 0.03em;
+  }
+  .ob-tab:hover { border-color: var(--brown-light); color: var(--text); }
+  .ob-tab.active { background: var(--dark); border-color: var(--dark); color: #fff; }
+  /* product list */
+  .ob-product-list { display: flex; flex-direction: column; gap: 10px; max-height: 520px; overflow-y: auto; padding-right: 4px; }
+  .ob-product-list::-webkit-scrollbar { width: 4px; }
+  .ob-product-list::-webkit-scrollbar-track { background: transparent; }
+  .ob-product-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  .ob-row {
+    display: grid; grid-template-columns: 52px 1fr auto;
+    align-items: center; gap: 14px;
+    background: #fff; border: 1.5px solid var(--border);
+    border-radius: 14px; padding: 10px 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .ob-row:hover { border-color: var(--brown-light); box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+  .ob-row.in-cart { border-color: var(--brown-light); background: #fdf9f5; }
+  .ob-row-img { width: 52px; height: 52px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
+  .ob-row-info { min-width: 0; }
+  .ob-row-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ob-row-meta { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; }
+  .ob-row-price { font-size: 0.82rem; color: var(--brown); font-weight: 600; white-space: nowrap; }
+  .ob-qty-ctrl { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .ob-qty-btn {
+    width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--border);
+    background: #fff; cursor: pointer; font-size: 1rem; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); transition: all 0.18s; font-weight: 400;
+  }
+  .ob-qty-btn:hover { background: var(--dark); border-color: var(--dark); color: #fff; }
+  .ob-qty-num {
+    min-width: 32px; text-align: center; font-size: 0.88rem; font-weight: 600;
+    color: var(--text);
+  }
+  /* quote panel */
+  .ob-panel {
+    background: var(--dark); border-radius: 24px; padding: 32px 28px;
+    position: sticky; top: 88px; color: #fff;
+  }
+  .ob-panel-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 400; margin-bottom: 6px;
+  }
+  .ob-panel-sub { font-size: 0.78rem; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; margin-bottom: 24px; }
+  .ob-empty {
+    text-align: center; padding: 32px 0;
+    color: rgba(255,255,255,0.35); font-size: 0.88rem; font-weight: 300;
+    border: 1.5px dashed rgba(255,255,255,0.15); border-radius: 14px;
+  }
+  .ob-empty-icon { font-size: 2rem; margin-bottom: 10px; }
+  .ob-items-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+  .ob-item {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 10px; animation: obItemIn 0.3s ease both;
+  }
+  @keyframes obItemIn {
+    from { opacity: 0; transform: translateX(12px); }
+    to { opacity: 1; transform: none; }
+  }
+  .ob-item-name { font-size: 0.85rem; color: rgba(255,255,255,0.8); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ob-item-qty { font-size: 0.78rem; color: rgba(255,255,255,0.45); white-space: nowrap; }
+  .ob-item-price { font-size: 0.85rem; font-weight: 600; color: var(--brown-light); white-space: nowrap; }
+  .ob-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 16px 0; }
+  .ob-total-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .ob-total-label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+  .ob-total-val { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 400; color: #fff; }
+  .ob-items-count { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
+  .ob-send-btn {
+    width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: #25d366; color: #fff; border: none; border-radius: 14px;
+    padding: 16px; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 600;
+    letter-spacing: 0.04em; cursor: pointer; transition: background 0.2s, transform 0.2s;
+  }
+  .ob-send-btn:hover:not(:disabled) { background: #1fb858; transform: translateY(-2px); }
+  .ob-send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .ob-clear-btn {
+    width: 100%; background: none; border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.45); border-radius: 10px; padding: 10px;
+    font-family: 'Jost', sans-serif; font-size: 0.8rem; cursor: pointer;
+    margin-top: 10px; transition: all 0.2s;
+  }
+  .ob-clear-btn:hover { border-color: rgba(255,255,255,0.35); color: rgba(255,255,255,0.7); }
+  .ob-no-results { text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 0.9rem; }
+  @media (max-width: 900px) {
+    .ob-layout { grid-template-columns: 1fr; }
+    .ob-panel { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="14" cy="14" r="3" fill="#8b6f47"/>
+      <ellipse cx="14" cy="7" rx="3" ry="5" fill="#c4a882" opacity="0.8"/>
+      <ellipse cx="14" cy="21" rx="3" ry="5" fill="#c4a882" opacity="0.8"/>
+      <ellipse cx="7" cy="14" rx="5" ry="3" fill="#c4a882" opacity="0.8"/>
+      <ellipse cx="21" cy="14" rx="5" ry="3" fill="#c4a882" opacity="0.8"/>
+      <ellipse cx="9" cy="9" rx="3" ry="5" fill="#d4b892" opacity="0.6" transform="rotate(-45 9 9)"/>
+      <ellipse cx="19" cy="9" rx="3" ry="5" fill="#d4b892" opacity="0.6" transform="rotate(45 19 9)"/>
+      <ellipse cx="9" cy="19" rx="3" ry="5" fill="#d4b892" opacity="0.6" transform="rotate(45 9 19)"/>
+      <ellipse cx="19" cy="19" rx="3" ry="5" fill="#d4b892" opacity="0.6" transform="rotate(-45 19 19)"/>
+    </svg>
+    <span>Petals</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#catalogue">Catalogue</a></li>
+    <li><a href="#order-builder">Order Builder</a></li>
+    <li><a href="#coming-soon">Coming Soon</a></li>
+    <li><a href="#sample">Sample Box</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#catalogue" onclick="toggleMenu()">Catalogue</a>
+  <a href="#order-builder" onclick="toggleMenu()">Order Builder</a>
+  <a href="#coming-soon" onclick="toggleMenu()">Coming Soon</a>
+  <a href="#sample" onclick="toggleMenu()">Sample Box</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">B2B Wholesale <span>·</span> Handmade in Pakistan</p>
+    <h1 class="hero-title">Petals</h1>
+    <p class="hero-sub">Premium crochet flowers for florists, event planners, and craft businesses. Handcrafted with care, delivered in bulk.</p>
+    <div class="hero-ctas">
+      <a href="#catalogue" class="btn-primary">Explore Collection</a>
+      <a href="https://wa.me/923227861158" target="_blank" class="btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+<section id="catalogue">
+  <div class="fade-in">
+    <p class="section-eyebrow">Our Collection</p>
+    <h2 class="section-title">Flower Catalogue</h2>
+    <p class="section-desc">Handcrafted crochet flowers available for bulk orders. Click on any product to view details and pricing.</p>
+  </div>
+  <div class="filter-bar fade-in">
+    <button class="filter-btn active" onclick="filterProducts('all', this)">All Products</button>
+    <button class="filter-btn" onclick="filterProducts('primary', this)">Primary Flowers</button>
+    <button class="filter-btn" onclick="filterProducts('filler', this)">Filler Flowers</button>
+    <button class="filter-btn" onclick="filterProducts('leaf', this)">Leaves</button>
+  </div>
+  <div id="productContainer"></div>
+</section>
+
+<!-- ORDER BUILDER -->
+<section id="order-builder">
+  <div class="fade-in">
+    <p class="section-eyebrow">Build Your Order</p>
+    <h2 class="section-title">Quote Calculator</h2>
+    <p class="section-desc">Select your flowers and quantities below. We'll generate a WhatsApp message with your full itemised quote instantly.</p>
+  </div>
+  <div class="ob-layout fade-in">
+    <!-- LEFT: product picker -->
+    <div>
+      <div class="ob-search-wrap">
+        <input class="ob-search" type="text" id="obSearch" placeholder="Search flowers…" oninput="obRender()">
+        <span class="ob-search-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </span>
+      </div>
+      <div class="ob-tabs">
+        <button class="ob-tab active" onclick="obSetTab('all',this)">All</button>
+        <button class="ob-tab" onclick="obSetTab('primary',this)">Primary</button>
+        <button class="ob-tab" onclick="obSetTab('filler',this)">Filler</button>
+        <button class="ob-tab" onclick="obSetTab('leaf',this)">Leaves</button>
+      </div>
+      <div class="ob-product-list" id="obList"></div>
+    </div>
+    <!-- RIGHT: quote panel -->
+    <div class="ob-panel">
+      <h3 class="ob-panel-title">Your Quote</h3>
+      <p class="ob-panel-sub">ITEMISED SUMMARY</p>
+      <div id="obQuoteBody">
+        <div class="ob-empty">
+          <div class="ob-empty-icon"></div>
+          <p>Add flowers to build your quote</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section id="coming-soon">
+  <div class="fade-in">
+    <p class="section-eyebrow" style="color:var(--dark);background:var(--dark);color:#fff;display:inline-block;padding:3px 14px;border-radius:20px;font-size:0.65rem;letter-spacing:0.2em;margin-bottom:18px;">COMING SOON</p>
+    <h2 class="section-title">New Arrivals</h2>
+    <p class="section-desc">We're expanding our collection. These beautiful additions will be available for order soon.</p>
+  </div>
+  <div class="cs-grid fade-in">
+    <div class="cs-card">
+      <div class="cs-img-wrap">
+        <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc1e?w=600&auto=format&fit=crop" alt="Lily">
+        <span class="cs-pill">Coming Soon</span>
+      </div>
+      <div class="cs-body">
+        <h3>Lily</h3>
+        <p>Primary Flower</p>
+      </div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-img-wrap">
+        <img src="https://images.unsplash.com/photo-1464820453369-31d2c0b651af?w=600&auto=format&fit=crop" alt="Anemone">
+        <span class="cs-pill">Coming Soon</span>
+      </div>
+      <div class="cs-body">
+        <h3>Anemone</h3>
+        <p>Primary Flower</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE BOX -->
+<section id="sample">
+  <div class="sample-img fade-in">
+    <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc1e?w=800&auto=format&fit=crop" alt="Sample Box">
+  </div>
+  <div class="fade-in">
+    <p class="sample-eyebrow">Special Offer</p>
+    <h2 class="sample-title">Complete Sample Box</h2>
+    <p class="sample-desc">Get one piece of every product in our catalogue. Perfect for evaluating quality before placing bulk orders.</p>
+    <ul class="sample-checks">
+      <li><span class="check-icon">✓</span> 1 piece of each flower (25+ items)</li>
+      <li><span class="check-icon">✓</span> All 3 categories covered</li>
+      <li><span class="check-icon">✓</span> Premium gift packaging</li>
+      <li><span class="check-icon">✓</span> Free nationwide delivery</li>
+    </ul>
+    <p class="sample-price-label">Only</p>
+    <p class="sample-price">Rs. 15,000</p>
+    <a href="https://wa.me/923227861158?text=Hi!%20I'd%20like%20to%20order%20the%20Complete%20Sample%20Box%20(Rs.%2015%2C000)" target="_blank" class="btn-sample">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Order Sample Box
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="nav-logo" style="margin-bottom:14px;">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+          <circle cx="14" cy="14" r="3" fill="#8b6f47"/>
+          <ellipse cx="14" cy="7" rx="3" ry="5" fill="#c4a882" opacity="0.8"/>
+          <ellipse cx="14" cy="21" rx="3" ry="5" fill="#c4a882" opacity="0.8"/>
+          <ellipse cx="7" cy="14" rx="5" ry="3" fill="#c4a882" opacity="0.8"/>
+          <ellipse cx="21" cy="14" rx="5" ry="3" fill="#c4a882" opacity="0.8"/>
+          <ellipse cx="9" cy="9" rx="3" ry="5" fill="#d4b892" opacity="0.6" transform="rotate(-45 9 9)"/>
+          <ellipse cx="19" cy="9" rx="3" ry="5" fill="#d4b892" opacity="0.6" transform="rotate(45 19 9)"/>
+          <ellipse cx="9" cy="19" rx="3" ry="5" fill="#d4b892" opacity="0.6" transform="rotate(45 9 19)"/>
+          <ellipse cx="19" cy="19" rx="3" ry="5" fill="#d4b892" opacity="0.6" transform="rotate(-45 19 19)"/>
+        </svg>
+        <span>Petals</span>
+      </a>
+      <p>Handmade crochet flowers for businesses that value craftsmanship and beauty.</p>
+      <div class="footer-tags">
+        <span class="footer-tag">B2B Wholesale</span>
+        <span class="footer-tag">Made in Pakistan</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#catalogue">Catalogue</a></li>
+        <li><a href="#coming-soon">Coming Soon</a></li>
+        <li><a href="#sample">Sample Box</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get in Touch</h4>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <a href="https://wa.me/923227861158" target="_blank" style="color:var(--text-muted);text-decoration:none;">+92 322 7861158</a>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:contact@petals.pk" style="color:var(--text-muted);text-decoration:none;">contact@petals.pk</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Petals. All rights reserved. Handmade with love in Pakistan.</p>
+    <p>B2B Wholesale Only · Minimum order quantities apply</p>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/923227861158" target="_blank" class="wa-float">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnBg(event)">
+  <div class="modal" id="modal">
+    <div class="modal-img"><img id="modalImg" src="" alt=""></div>
+    <div class="modal-body">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <span class="modal-badge" id="modalBadge"></span>
+      <h2 class="modal-name" id="modalName"></h2>
+      <p class="modal-cat" id="modalCat"></p>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-price-row">
+        <p class="modal-price-note">Wholesale Price</p>
+        <p class="modal-price" id="modalPrice"></p>
+      </div>
+      <p class="modal-moq" id="modalMoq"></p>
+      <a id="modalWaBtn" href="#" target="_blank" class="btn-modal-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── PRODUCT DATA ───
+const products = [
+  // PRIMARY FLOWERS
+  { id: 1, name: "Rose A", cat: "primary", badge: "Primary Flower", price: 450, moq: 10,
+    desc: "A classic full-bloom crochet rose with rich layered petals. Available in custom colors. Perfect as a statement piece in bouquets, wreaths, and floral arrangements.",
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop" },
+  { id: 2, name: "Rose B", cat: "primary", badge: "Primary Flower", price: 450, moq: 10,
+    desc: "A softer, more open rose with a romantic silhouette. Slightly flatter bloom profile — great for flat-lay arrangements and bridal décor.",
+    img: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600&auto=format&fit=crop" },
+  { id: 3, name: "Daisy A", cat: "primary", badge: "Primary Flower", price: 280, moq: 10,
+    desc: "Classic white daisy with a bold yellow center. Fresh and cheerful — a bestseller for spring events, children's parties, and gift arrangements.",
+    img: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&auto=format&fit=crop" },
+  { id: 4, name: "Daisy B", cat: "primary", badge: "Primary Flower", price: 280, moq: 10,
+    desc: "A smaller, daintier daisy variation with delicate petals. Works beautifully as filler or accent in mixed bouquets.",
+    img: "https://images.unsplash.com/photo-1490750967868-88df5691cc1e?w=600&auto=format&fit=crop" },
+  { id: 5, name: "Tulip A", cat: "primary", badge: "Primary Flower", price: 350, moq: 10,
+    desc: "Elegant upright tulip with smooth, sculpted petals. Adds height and structure to arrangements. Ideal for formal events and table centrepieces.",
+    img: "https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=600&auto=format&fit=crop" },
+  { id: 6, name: "Tulip B", cat: "primary", badge: "Primary Flower", price: 350, moq: 10,
+    desc: "A slightly open tulip with a more relaxed, bloomed look. Pairs perfectly with Tulip A for dynamic, natural-looking bouquets.",
+    img: "https://images.unsplash.com/photo-1567748157439-651aca2ff064?w=600&auto=format&fit=crop" },
+  { id: 7, name: "Poppy", cat: "primary", badge: "Primary Flower", price: 320, moq: 10,
+    desc: "Delicate poppy with thin, tissue-like crocheted petals and a dark centre. Adds a wild, meadow-inspired beauty to any arrangement.",
+    img: "https://images.unsplash.com/photo-1495908333425-29a1e0918c5f?w=600&auto=format&fit=crop" },
+  { id: 8, name: "Carnation", cat: "primary", badge: "Primary Flower", price: 380, moq: 10,
+    desc: "Ruffled carnation with densely layered petals. A classic florist favourite — ideal for corsages, boutonnieres, and bulk arrangements.",
+    img: "https://images.unsplash.com/photo-1487530811015-780d5b99c5de?w=600&auto=format&fit=crop" },
+  { id: 9, name: "Lavender", cat: "primary", badge: "Primary Flower", price: 240, moq: 10,
+    desc: "Slender lavender sprig with tiny clustered blooms. Adds fragrant-inspired elegance and a purple accent to any bouquet or wreath.",
+    img: "https://images.unsplash.com/photo-1468581264429-2548ef9eb732?w=600&auto=format&fit=crop" },
+  { id: 10, name: "Ping Pong", cat: "primary", badge: "Primary Flower", price: 420, moq: 10,
+    desc: "Spherical pom-pom style flower with a smooth, globe-like form. Highly sought-after for modern minimalist arrangements and wedding décor.",
+    img: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&auto=format&fit=crop" },
+  { id: 11, name: "Sunflower", cat: "primary", badge: "Primary Flower", price: 480, moq: 10,
+    desc: "Bold, cheerful sunflower with a rich brown centre and bright yellow petals. A show-stopping statement piece — great for autumn and rustic themes.",
+    img: "https://images.unsplash.com/photo-1523694576729-96e81a55fdb2?w=600&auto=format&fit=crop" },
+  { id: 12, name: "Hibiscus", cat: "primary", badge: "Primary Flower", price: 400, moq: 10,
+    desc: "Tropical hibiscus with wide, flared petals and a prominent stamen. Stunning for tropical-themed events and vibrant mixed arrangements.",
+    img: "https://images.unsplash.com/photo-1566225820685-97a21d4cef65?w=600&auto=format&fit=crop" },
+  { id: 13, name: "Calla Lily", cat: "primary", badge: "Primary Flower", price: 520, moq: 10,
+    desc: "Sleek, architectural calla lily with a single rolled petal and elegant spadix. The ultimate luxury flower for weddings and upscale events.",
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop" },
+  { id: 14, name: "Marigold", cat: "primary", badge: "Primary Flower", price: 300, moq: 10,
+    desc: "Vibrant multi-layered marigold with warm orange and yellow tones. A cultural staple — popular for festive occasions, mehndi events, and traditional décor.",
+    img: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&auto=format&fit=crop" },
+
+  // FILLER FLOWERS
+  { id: 15, name: "Baby's Breath", cat: "filler", badge: "Filler Flower", price: 180, moq: 15,
+    desc: "Delicate clusters of tiny white blooms on fine stems. The go-to filler for softening and adding airiness to any arrangement.",
+    img: "https://images.unsplash.com/photo-1562690868-60bbe7293e94?w=600&auto=format&fit=crop" },
+  { id: 16, name: "Forget Me Not", cat: "filler", badge: "Filler Flower", price: 160, moq: 15,
+    desc: "Tiny five-petalled blue flowers with yellow centres. Adds a sweet, sentimental charm and a pop of soft blue to bouquets.",
+    img: "https://images.unsplash.com/photo-1490750967868-88df5691cc1e?w=600&auto=format&fit=crop" },
+  { id: 17, name: "Lily of the Valley", cat: "filler", badge: "Filler Flower", price: 220, moq: 15,
+    desc: "Arching stems with dainty bell-shaped white blooms. A classic bridal flower — adds graceful movement and a romantic feel to arrangements.",
+    img: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&auto=format&fit=crop" },
+
+  // LEAVES
+  { id: 18, name: "Leaf 1", cat: "leaf", badge: "Leaf", price: 120, moq: 20,
+    desc: "Classic rounded leaf with detailed vein texture. Versatile base leaf for all flower types — adds natural depth to bouquets and wreaths.",
+    img: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&auto=format&fit=crop" },
+  { id: 19, name: "Leaf 2", cat: "leaf", badge: "Leaf", price: 120, moq: 20,
+    desc: "Teardrop-shaped leaf in a rich forest green. Compact and elegant — ideal for smaller flowers like daisies and forget-me-nots.",
+    img: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=600&auto=format&fit=crop" },
+  { id: 20, name: "Leaf 3", cat: "leaf", badge: "Leaf", price: 130, moq: 20,
+    desc: "Long, narrow willow-style leaf with a two-tone green finish. Adds length and elegance — perfect for calla lilies and tulips.",
+    img: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&auto=format&fit=crop" },
+  { id: 21, name: "Leaf 4", cat: "leaf", badge: "Leaf", price: 140, moq: 20,
+    desc: "Circular, scalloped leaf — almost like a lotus pad. Unusual and eye-catching; great as a base or background element.",
+    img: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=600&auto=format&fit=crop" },
+  { id: 22, name: "Leaf 5", cat: "leaf", badge: "Leaf", price: 130, moq: 20,
+    desc: "Broad, asymmetric heart-shaped leaf with a rich texture. Adds warmth and fullness to large floral arrangements.",
+    img: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&auto=format&fit=crop" },
+  { id: 23, name: "Leaf 6", cat: "leaf", badge: "Leaf", price: 150, moq: 20,
+    desc: "Detailed fern frond with multiple leaflets on a single stem. Adds dramatic greenery and a botanical, wild feel to arrangements.",
+    img: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=600&auto=format&fit=crop" },
+];
+
+// ─── RENDER PRODUCTS ───
+function renderProducts(filter) {
+  const container = document.getElementById('productContainer');
+  container.innerHTML = '';
+
+  const categories = [
+    { key: 'primary', label: 'PRIMARY FLOWERS' },
+    { key: 'filler',  label: 'FILLER FLOWERS' },
+    { key: 'leaf',    label: 'LEAVES' },
+  ];
+
+  categories.forEach(cat => {
+    const items = products.filter(p => p.cat === cat.key && (filter === 'all' || filter === cat.key));
+    if (!items.length) return;
+
+    const divider = document.createElement('div');
+    divider.className = 'cat-divider';
+    divider.innerHTML = `<span>${cat.label}</span>`;
+    container.appendChild(divider);
+
+    const grid = document.createElement('div');
+    grid.className = 'product-grid';
+    items.forEach(p => {
+      grid.innerHTML += `
+        <div class="product-card" onclick="openModal(${p.id})">
+          <div class="card-img-wrap">
+            <img src="${p.img}" alt="${p.name}" loading="lazy">
+            <span class="card-badge">${p.badge.toUpperCase()}</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-name">${p.name}</h3>
+            <p class="card-cat">${p.badge}</p>
+            <div class="card-footer">
+              <span class="card-price">Rs. ${p.price.toLocaleString()} <small>/ pc</small></span>
+              <button class="card-add" onclick="event.stopPropagation();openModal(${p.id})">+</button>
+            </div>
+          </div>
+        </div>`;
+    });
+    container.appendChild(grid);
+  });
+}
+
+function filterProducts(f, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(f);
+  requestAnimationFrame(() => observeCards());
+}
+
+// ─── MODAL ───
+function openModal(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('modalImg').src = p.img;
+  document.getElementById('modalImg').alt = p.name;
+  document.getElementById('modalBadge').textContent = p.badge.toUpperCase();
+  document.getElementById('modalName').textContent = p.name;
+  document.getElementById('modalCat').textContent = p.badge;
+  document.getElementById('modalDesc').textContent = p.desc;
+  document.getElementById('modalPrice').textContent = `Rs. ${p.price.toLocaleString()} / pc`;
+  document.getElementById('modalMoq').innerHTML = `<strong>Minimum Order:</strong> ${p.moq} pieces`;
+  const msg = encodeURIComponent(`Hi! I'm interested in ordering *${p.name}* (${p.badge}) at Rs. ${p.price}/pc. Please share more details.`);
+  document.getElementById('modalWaBtn').href = `https://wa.me/923227861158?text=${msg}`;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalOnBg(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ─── MOBILE MENU ───
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ─── SCROLL ANIMATIONS ───
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// card + divider observer — called after renderProducts
+function observeCards() {
+  // dividers
+  const divObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('div-visible');
+        divObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.cat-divider').forEach(el => divObs.observe(el));
+
+  // cards with stagger
+  const cardObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('card-visible');
+        cardObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.product-card').forEach((card, i) => {
+    // stagger delay based on position in row (0–3)
+    const col = i % 4;
+    card.style.transitionDelay = `${col * 80}ms`;
+    cardObs.observe(card);
+  });
+}
+
+// ─── ORDER BUILDER ───
+let obCart = {}; // { id: qty }
+let obTab = 'all';
+
+function obSetTab(tab, btn) {
+  obTab = tab;
+  document.querySelectorAll('.ob-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  obRender();
+}
+
+function obRender() {
+  const q = document.getElementById('obSearch').value.toLowerCase().trim();
+  const list = document.getElementById('obList');
+  const filtered = products.filter(p => {
+    const matchTab = obTab === 'all' || p.cat === obTab;
+    const matchSearch = !q || p.name.toLowerCase().includes(q);
+    return matchTab && matchSearch;
+  });
+
+  if (!filtered.length) {
+    list.innerHTML = `<div class="ob-no-results">No flowers found</div>`;
+    return;
+  }
+
+  list.innerHTML = filtered.map(p => {
+    const qty = obCart[p.id] || 0;
+    return `
+    <div class="ob-row ${qty > 0 ? 'in-cart' : ''}" id="obrow-${p.id}">
+      <img class="ob-row-img" src="${p.img}" alt="${p.name}">
+      <div class="ob-row-info">
+        <div class="ob-row-name">${p.name}</div>
+        <div class="ob-row-meta">${p.badge} · MOQ ${p.moq}pc</div>
+        <div class="ob-row-price">Rs. ${p.price.toLocaleString()} / pc</div>
+      </div>
+      <div class="ob-qty-ctrl">
+        <button class="ob-qty-btn" onclick="obChange(${p.id}, -1)">−</button>
+        <span class="ob-qty-num">${qty}</span>
+        <button class="ob-qty-btn" onclick="obChange(${p.id}, 1)">+</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function obChange(id, delta) {
+  const p = products.find(x => x.id === id);
+  const cur = obCart[id] || 0;
+  const next = Math.max(0, cur + delta * p.moq);
+  if (next === 0) delete obCart[id]; else obCart[id] = next;
+  obRender();
+  obUpdatePanel();
+}
+
+function obUpdatePanel() {
+  const panel = document.getElementById('obQuoteBody');
+  const entries = Object.entries(obCart);
+
+  if (!entries.length) {
+    panel.innerHTML = `<div class="ob-empty"><div class="ob-empty-icon">🌸</div><p>Add flowers to build your quote</p></div>`;
+    return;
+  }
+
+  let total = 0;
+  let totalPcs = 0;
+  const rows = entries.map(([id, qty]) => {
+    const p = products.find(x => x.id === +id);
+    const sub = p.price * qty;
+    total += sub;
+    totalPcs += qty;
+    return `<div class="ob-item">
+      <span class="ob-item-name">${p.name}</span>
+      <span class="ob-item-qty">${qty}pc</span>
+      <span class="ob-item-price">Rs. ${sub.toLocaleString()}</span>
+    </div>`;
+  }).join('');
+
+  panel.innerHTML = `
+    <div class="ob-items-list">${rows}</div>
+    <hr class="ob-divider">
+    <div class="ob-total-row">
+      <span class="ob-total-label">Total Estimate</span>
+      <span class="ob-total-val">Rs. ${total.toLocaleString()}</span>
+    </div>
+    <p class="ob-items-count">${totalPcs} pieces across ${entries.length} item${entries.length > 1 ? 's' : ''}</p>
+    <button class="ob-send-btn" onclick="obSendWA()">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Send Quote on WhatsApp
+    </button>
+    <button class="ob-clear-btn" onclick="obClear()">Clear all</button>`;
+}
+
+function obSendWA() {
+  const entries = Object.entries(obCart);
+  if (!entries.length) return;
+  let msg = `Hi Petals! 🌸 I'd like to place a bulk order:\n\n`;
+  let total = 0;
+  entries.forEach(([id, qty]) => {
+    const p = products.find(x => x.id === +id);
+    const sub = p.price * qty;
+    total += sub;
+    msg += `• ${p.name} — ${qty} pcs @ Rs.${p.price}/pc = Rs.${sub.toLocaleString()}\n`;
+  });
+  msg += `\n*Total: Rs.${total.toLocaleString()}*\n\nPlease confirm availability and delivery details. Thank you!`;
+  window.open(`https://wa.me/923227861158?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+function obClear() {
+  obCart = {};
+  obRender();
+  obUpdatePanel();
+}
+
+// init order builder
+obRender();
+
+// ─── INIT ───
+renderProducts('all');
+observeCards();
+</script>
+</body>
+</html>
